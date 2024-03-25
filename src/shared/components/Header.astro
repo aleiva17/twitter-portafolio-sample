@@ -1,0 +1,20 @@
+---
+import ProfilePicture from "./ProfilePicture.astro";
+import Biography from "./Biography.astro";
+import NavLinks from "./NavLinks.astro";
+
+interface Props {
+  activeLink: string;
+}
+
+const { activeLink } = Astro.props;
+---
+
+<header class="bg-white border-b-2">
+  <section>
+    <img class="w-full h-auto aspect-video" src="/banner.gif" alt="Escenario" />
+    <ProfilePicture />
+  </section>
+  <Biography />
+  <NavLinks activeLink={activeLink} />
+</header>

@@ -1,0 +1,36 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Post from "../layouts/Post.astro";
+
+const experiencies = await Astro.glob("../content/experience/*.md");
+---
+
+<Layout activeLink="experiencia" title="Michelle Sanches | Experiencia">
+  {
+    experiencies.map((job) => {
+      const Content = job.Content;
+
+      return (
+        <Post time="8 Mar. 2024">
+          <h2 class="text-2xl font-bold mt-4">{job.frontmatter.title}</h2>
+          <time class="text-gray-600 font-semibold">{job.frontmatter.startingDate} - {job.frontmatter.endingDate}</time>
+          <div data-type="job-article" class="flex flex-col gap-2 py-3">
+            <Content />
+          </div>
+        </Post>
+      )
+    })
+  }
+</Layout>
+
+<style is:global>
+  div[data-type="job-article"] > ul {
+    list-style: disc inside;
+    margin-left: 2rem;
+    font-size: 14px;
+  }
+
+  div[data-type="job-article"] > ul > li {
+    margin-bottom: 0.5rem;
+  }
+</style>

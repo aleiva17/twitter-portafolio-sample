@@ -1,0 +1,22 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Post from "../layouts/Post.astro";
+
+import {certifications} from "../data/certifications";
+import CertificationCard from "../components/CertificationCard.astro";
+---
+
+<Layout title="Michelle Sánchez | Certificaciones" activeLink="certificaciones">
+  <Post time="7 Mar. 2024">
+    <p>
+      ¡Holi! Estas son las certificaciones que considero más importantes y que han tenido un impacto positivo en mi desempeño como ingeneria de software. Siéntanse libres de preguntarme por mi experiencia en cada una de estas 😊.
+    </p>
+    <div class="space-y-4 mt-6">
+      {
+        certifications.map(
+          certification => <CertificationCard certification={certification} />
+        )
+      }
+    </div>
+  </Post>
+</Layout>

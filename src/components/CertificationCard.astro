@@ -1,0 +1,30 @@
+---
+import type { Certification } from '../models/Certification'
+
+interface Props {
+  certification: Certification;
+}
+
+const {certification} = Astro.props;
+---
+
+<div class="grid grid-cols-[auto_1fr] place-items-center bg-gray-100 rounded-2xl drop-shadow-md p-6 gap-6">
+  <img 
+    class="h-32 w-auto"
+    src={certification.imageUrl} 
+    alt={`${certification.title} certification icon`}
+  >
+  <div class="w-full">
+    <h2 class="text-2xl font-bold mb-1">{certification.title}</h2>
+    <strong class="block font-normal">Emisor: {certification.emitter}</strong>
+    <time class="block text-gray-600">{certification.expeditionDate}</time>
+    <a
+      class="relative inline-block font-semibold -left-2.5 text-pink-600 hover:bg-pink-200 rounded-full duration-300 px-2.5 py-0.5 mt-2"
+      href={certification.url}
+      target="_blank"
+      referrerpolicy="no-referrer"
+    >
+      Ver certificado
+    </a>
+  </div>
+</div>

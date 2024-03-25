@@ -1,0 +1,41 @@
+---
+interface Props {
+  activeLink: string;
+}
+
+const links = [
+  { id: "habilidades", name: "Habilidades", destination: "/" },
+  { id: "experiencia", name: "Experiencia", destination: "/experiencia" },
+  { id: "proyectos", name: "Proyectos", destination: "/proyectos" },
+  {
+    id: "certificaciones",
+    name: "Certificaciones",
+    destination: "/certificaciones",
+  },
+];
+
+const { activeLink } = Astro.props;
+---
+
+<nav>
+  <ul class="flex text-center font-medium text-sm md:text-base text-gray-800">
+    {
+      links.map(({ id, name, destination }) => (
+        <li
+          class={`w-full p-4 ${activeLink === id && "font-bold text-gray-950"}`}
+        >
+          <a
+            href={destination}
+            class={
+              activeLink === id
+                ? "h-full px-1 pb-4 border-b-4 border-pink-400"
+                : ""
+            }
+          >
+            {name}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</nav>

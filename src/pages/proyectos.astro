@@ -1,0 +1,38 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { getRepositories } from "../services/GithubRepositoriesService";
+import type { Repository } from "../models/Repository";
+import RepositoryCard from "../components/RepositoryCard.astro";
+import Post from "../layouts/Post.astro";
+
+const repositories = await getRepositories("sindresorhus");
+
+const top5Repositories: Array<Repository> = repositories
+  .sort((a, b) => b.stars - a.stars)
+  .slice(0, 5)
+  .map((repository, index) => ({
+    ...repository,
+    imageUrl: `/project-covers/${index + 1}.jpg`,
+  }));
+---
+
+<Layout activeLink="proyectos" title="Michelle Sánchez | Proyectos">
+  <Post time="7 Mar. 2024">
+    <p>
+      Como ingenieria de software, me gusta contribuir en el desarrollo open
+      source, así que gran parte mis proyectos son visibles desde mi cuenta de <a
+        class="text-blue-600 hover:underline hover:font-medium"
+        href="https://github.com/miche-san"
+        target="_blank"
+        referrerpolicy="no-referrer">github</a
+      > 💞. Aún así, aquí se pueden visualizar mis 5 repositorios más populares 🙂.
+    </p>
+    <div class="flex flex-col items-center mt-5 gap-6">
+      {
+        top5Repositories.map((repository) => (
+          <RepositoryCard repository={repository} />
+        ))
+      }
+    </div>
+  </Post>
+</Layout>

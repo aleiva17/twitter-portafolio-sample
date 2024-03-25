@@ -1,0 +1,133 @@
+---
+import Post from "../../layouts/Post.astro";
+---
+
+<Post time="24 feb. 2024">
+  <p class="text-gray-800 mb-2">
+    A lo largo de estos 4 últimos años he ido estudiando y perfeccionando mis
+    habilidades en las siguiente tecnologías:
+  </p>
+
+  <div
+    class="grid grid-cols-1 md:grid-cols-[3fr_2fr] grid-rows-2 gradient rounded-2xl w-full gap-6 py-12 px-10"
+  >
+    <div class="bg-white rounded-xl h-fit drop-shadow-xl row-span-2 p-4">
+      <h2 class="text-lg font-bold mb-3">Frontend:</h2>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+        <div class="flex flex-col justify-center items-center gap-2">
+          <img
+            src="https://cdn.svgporn.com/logos/react.svg"
+            class="h-16 w-auto"
+            alt="react logo"
+          />
+          <p class="text-center font-medium">React JS</p>
+        </div>
+        <div class="flex flex-col justify-center items-center gap-2">
+          <img
+            src="https://cdn.svgporn.com/logos/angular-icon.svg"
+            class="h-16 w-auto"
+            alt="react logo"
+          />
+          <p class="text-center font-medium">Angular</p>
+        </div>
+        <div class="flex flex-col justify-center items-center gap-2">
+          <img
+            src="https://cdn.svgporn.com/logos/nextjs-icon.svg"
+            class="h-16 w-auto"
+            alt="react logo"
+          />
+          <p class="text-center font-medium">NextJS</p>
+        </div>
+        <div class="flex flex-col justify-center items-center gap-2">
+          <img
+            src="https://cdn.svgporn.com/logos/astro-icon.svg"
+            class="h-16 w-auto"
+            alt="react logo"
+          />
+          <p class="text-center font-medium">Astro</p>
+        </div>
+        <div class="flex flex-col justify-center items-center gap-2">
+          <img
+            src="https://tailwindcss.com/_next/static/media/tailwindcss-mark.3c5441fc7a190fb1800d4a5c7f07ba4b1345a9c8.svg"
+            class="h-16 w-16"
+            alt="react logo"
+          />
+          <p class="text-center font-medium">Tailwind CSS</p>
+        </div>
+        <div class="flex flex-col justify-center items-center gap-2">
+          <img
+            src="https://cdn.svgporn.com/logos/typescript-icon.svg"
+            class="h-16 w-auto"
+            alt="react logo"
+          />
+          <p class="text-center font-medium">TypeScript</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-xl h-full drop-shadow-xl p-4">
+      <h2 class="text-lg font-bold mb-3">Backend:</h2>
+      <div class="grid grid-cols-2 gap-3">
+        <div class="flex flex-col justify-center items-center gap-2">
+          <img
+            src="https://cdn.svgporn.com/logos/nestjs.svg"
+            class="h-16 w-auto"
+            alt="react logo"
+          />
+          <p class="text-center font-medium">Nest JS</p>
+        </div>
+        <div class="flex flex-col justify-center items-center gap-2">
+          <img
+            src="https://cdn.svgporn.com/logos/spring-icon.svg"
+            class="h-16 w-auto"
+            alt="react logo"
+          />
+          <p class="text-center font-medium">Springboot</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-xl h-full drop-shadow-xl p-4">
+      <h2 class="text-lg font-bold mb-3">Herramientas:</h2>
+      <div class="grid grid-cols-2 gap-3">
+        <div class="flex flex-col justify-center items-center gap-2">
+          <img
+            src="https://cdn.svgporn.com/logos/git-icon.svg"
+            class="h-16 w-auto"
+            alt="react logo"
+          />
+          <p class="text-center font-medium">Git</p>
+        </div>
+        <div class="flex flex-col justify-center items-center gap-2">
+          <img
+            src="https://cdn.svgporn.com/logos/microsoft-azure.svg"
+            class="h-16 w-auto"
+            alt="react logo"
+          />
+          <p class="text-center font-medium">Azure</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</Post>
+
+<style>
+  .gradient {
+    background: hsla(238, 100%, 71%, 1);
+    background: linear-gradient(
+      90deg,
+      hsla(238, 100%, 71%, 1) 0%,
+      hsla(295, 100%, 84%, 1) 100%
+    );
+    background: -moz-linear-gradient(
+      90deg,
+      hsla(238, 100%, 71%, 1) 0%,
+      hsla(295, 100%, 84%, 1) 100%
+    );
+    background: -webkit-linear-gradient(
+      90deg,
+      hsla(238, 100%, 71%, 1) 0%,
+      hsla(295, 100%, 84%, 1) 100%
+    );
+  }
+</style>
